@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'contact',
     'home',
     'bootstrap4',
+    'accounts',
 ]
 
 MIDDLEWARE = [

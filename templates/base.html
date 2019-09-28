@@ -39,6 +39,14 @@
             <li {% if clients %}class="active"{% endif %}><a href="{% url 'clients:client_list' %}">Clients</a></li>
             <li {% if info %}class="active"{% endif %}><a href="{% url 'about:info' %}">About</a></li>
             <li {% if contact %}class="active"{% endif %}><a href="{% url 'contact:contact_us' %}">Contact Us</a></li>
+            {% if user.is_authenticated %}
+  
+            <li {% if register_form %}class="active"{% endif %}>Welcome! {{user.first_name}}</li>
+            <li {% if register_form %}class="active"{% endif %}><a href="{% url 'accounts:logout' %}">Logout</a></li>
+            {% else %}
+            <li {% if register_form %}class="active"{% endif %}><a href="{% url 'accounts:register' %}">Register</a></li>
+            <li {% if login_form %}class="active"{% endif %}><a href="{% url 'accounts:login' %}">Login</a></li>
+            {% endif %}
           </ul>
           <div class="extra-text visible-xs"> 
             <a href="#" class="probootstrap-burger-menu"><i>Menu</i></a>

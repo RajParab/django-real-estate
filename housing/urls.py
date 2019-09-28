@@ -26,6 +26,7 @@ urlpatterns = [
     path('clients/',include('clients.urls', namespace='clients')),
     path('about/',include('about.urls', namespace='about')),
     path('contact/',include('contact.urls', namespace='contact')),
+    path('accounts/',include('accounts.urls', namespace='accounts')),
 
 ]
 
